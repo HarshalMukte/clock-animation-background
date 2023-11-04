@@ -4,19 +4,28 @@
     box-sizing: border-box;
 }
 body{
-    position: relative;
     width: 100%;
-    height: 100vh;
+    position: relative;
+    min-height: 100vh;
 }
 .background{
-    width: max(200vw, 200vh);
-    aspect-ratio: 1/1;
-    position: fixed;  
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: red;
+}
+.background::after{
+    content: "";
+    width: 500vw;
+    height: 500vh;
+    position: absolute;  
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(0);
-    z-index: 0;
-    background-image: conic-gradient(rgb(1, 87, 103), transparent);
+    background-image: conic-gradient(from 0deg, rgb(1, 87, 103), #fff);
     animation: rotate 10s linear  infinite;
 }
 
