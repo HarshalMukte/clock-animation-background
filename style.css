@@ -5,7 +5,6 @@
 }
 body{
     width: 100%;
-    position: relative;
     min-height: 100vh;
 }
 .background{
@@ -16,22 +15,21 @@ body{
     height: 100vh;
     overflow: hidden;
     background-color: red;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.background::after{
-    content: "";
-    width: 500vw;
-    height: 500vh;
-    position: absolute;  
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(0);
+.clockAnimation{
+    position: absolute;
+    width: 150%;
+    height: 1000%;
     background-image: conic-gradient(from 0deg, rgb(1, 87, 103), #fff);
-    animation: rotate 10s linear  infinite;
+    animation: rotate 10s linear infinite ;
 }
 
 @keyframes rotate {
     to{
-        transform: translate(-50%, -50%) rotate(360deg);
-
+        rotate: 360deg;
     }
 }
